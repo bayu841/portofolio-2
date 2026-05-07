@@ -1,7 +1,32 @@
+<script setup>
+import { ref, onMounted } from "vue";
+
+const show = ref(false);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        show.value = true;
+      }
+    },
+    {
+      threshold: 0.2,
+    },
+  );
+
+  const section = document.querySelector("#home");
+
+  if (section) {
+    observer.observe(section);
+  }
+});
+</script>
 <template>
   <section
     id="home"
-    class="min-h-screen flex items-center justify-center px-2 sm:px-6 md:px-16 py-22"
+    :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'"
+    class="min-h-screen flex items-center justify-center px-2 sm:px-6 md:px-16 py-22 transition-all duration-700 ease-out"
   >
     <div class="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
       <!-- TEXT -->

@@ -1,3 +1,27 @@
+<script setup>
+import { ref, onMounted } from "vue";
+
+const show = ref(false);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        show.value = true;
+      }
+    },
+    {
+      threshold: 0.4,
+    },
+  );
+
+  const section = document.querySelector("#about");
+
+  if (section) {
+    observer.observe(section);
+  }
+});
+</script>
 <template>
   <section
     id="about"
@@ -9,7 +33,8 @@
       class="w-40 md:w-40 absolute -left-1 md:-left-1 top-5 md:top-2 opacity-80 scale-x-[-1]"
     />
     <div
-      class="bg-gray-50 border-4 border-gray-800 rounded-3xl p-8 md:p-10 shadow-[10px_10px_0px_black]"
+      :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'"
+      class="bg-gray-50 border-4 border-gray-800 rounded-3xl p-8 md:p-10 shadow-[10px_10px_0px_gray] transition-all duration-700 ease-out"
     >
       <!-- LABEL -->
       <p
@@ -35,25 +60,25 @@
       <!-- SKILLS -->
       <div class="flex flex-wrap gap-4">
         <div
-          class="bg-yellow-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_black]"
+          class="bg-yellow-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_gray]"
         >
           Vue JS
         </div>
 
         <div
-          class="bg-green-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_black]"
+          class="bg-green-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_gray]"
         >
           HTML & CSS
         </div>
 
         <div
-          class="bg-blue-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_black]"
+          class="bg-blue-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_gray]"
         >
           Tailwind
         </div>
 
         <div
-          class="bg-pink-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_black]"
+          class="bg-pink-300 border-4 border-gray-800 px-5 py-3 font-black shadow-[4px_4px_0px_gray]"
         >
           UI/UX
         </div>

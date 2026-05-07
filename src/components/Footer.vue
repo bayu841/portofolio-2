@@ -45,7 +45,7 @@ import { Github, Instagram, Linkedin } from "lucide-vue-next";
             <a
               href="https://github.com/bayu841"
               target="_blank"
-              class="bg-orange-500 border-4 border-gray-800 p-4 text-white shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
+              class="bg-orange-500 border-4 border-gray-800 p-4 text-white shadow-[4px_4px_0px_gray] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
             >
               <Github :size="28" />
             </a>
@@ -54,7 +54,7 @@ import { Github, Instagram, Linkedin } from "lucide-vue-next";
             <a
               href="https://www.instagram.com/ardiansya_byu/"
               target="_blank"
-              class="bg-white border-4 border-gray-800 p-4 shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
+              class="bg-white border-4 border-gray-800 p-4 shadow-[4px_4px_0px_gray] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
             >
               <Instagram :size="28" />
             </a>
@@ -63,7 +63,7 @@ import { Github, Instagram, Linkedin } from "lucide-vue-next";
             <a
               href="https://www.linkedin.com/in/bayu-ardiansyah-95501b3a7/"
               target="_blank"
-              class="bg-blue-500 text-white border-4 border-gray-800 p-4 shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
+              class="bg-blue-500 text-white border-4 border-gray-800 p-4 shadow-[4px_4px_0px_gray] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
             >
               <Linkedin :size="28" />
             </a>

@@ -1,15 +1,43 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const showContact = ref(false)
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        showContact.value = true
+      }
+    },
+    {
+      threshold: 0.4,
+    }
+  )
+
+  const section = document.querySelector('#contact')
+
+  if (section) {
+    observer.observe(section)
+  }
+})
+</script>
 <template>
   <section
     id="contact"
     class="min-h-screen relative px-6 md:px-16 py-[130px] flex items-center"
   >
-   <img
+    <img
       src="/public/images/pattern4.webp"
       alt=""
       class="w-40 md:w-40 absolute -right-1 md:-right-1 top-5 md:top-2 opacity-80"
     />
     <div
-      class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center"
+     :class="
+    showContact
+      ? 'opacity-100 translate-x-0'
+      : 'opacity-0 -translate-x-20'"
+      class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center transition-all duration-700 ease-out"
     >
       <!-- LEFT CONTENT -->
       <div>
@@ -32,7 +60,7 @@
         <!-- CONTACT INFO -->
         <div class="flex flex-col gap-5">
           <div
-            class="bg-gray-50 border-4 border-gray-800 p-5 rounded-2xl shadow-[6px_6px_0px_black]"
+            class="bg-gray-50 border-4 border-gray-800 p-5 rounded-2xl shadow-[6px_6px_0px_gray]"
           >
             <p class="font-black text-xl mb-1">Email</p>
 
@@ -40,7 +68,7 @@
           </div>
 
           <div
-            class="bg-yellow-300 border-4 border-gray-800 p-5 rounded-2xl shadow-[6px_6px_0px_black]"
+            class="bg-yellow-300 border-4 border-gray-800 p-5 rounded-2xl shadow-[6px_6px_0px_gray]"
           >
             <p class="font-black text-xl mb-1">Location</p>
 
@@ -51,7 +79,7 @@
 
       <!-- RIGHT FORM -->
       <div
-        class="bg-gray-50 border-4 border-gray-800 rounded-3xl p-8 md:p-10 shadow-[10px_10px_0px_black]"
+        class="bg-gray-50 border-4 border-gray-800 rounded-3xl p-8 md:p-10 shadow-[10px_10px_0px_gray]"
       >
         <form class="flex flex-col gap-6">
           <!-- NAME -->
@@ -90,7 +118,7 @@
           <!-- BUTTON -->
           <button
             type="submit"
-            class="bg-orange-500 text-white border-4 border-gray-800 px-6 py-4 font-black shadow-[6px_6px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
+            class="bg-orange-500 text-white border-4 border-gray-800 px-6 py-4 font-black shadow-[6px_6px_0px_gray] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
           >
             Send Message
           </button>
