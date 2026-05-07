@@ -1,7 +1,7 @@
 <template>
   <section
     id="home"
-    class="min-h-screen flex items-center justify-center px-6 md:px-16 py-22"
+    class="min-h-screen flex items-center justify-center px-6 md:px-3 py-22"
   >
     <div class="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
       <!-- TEXT -->
