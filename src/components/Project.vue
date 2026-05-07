@@ -1,10 +1,13 @@
-
 <script setup>
+import project1 from '../assets/images/project1.webp'
+import project2 from '../assets/images/project2.webp'
+import project3 from '../assets/images/project3.webp'
+
 const projects = [
   {
     title: "Zona Coding",
     desc: "Website pembelajaran modern dengan tampilan yang menarik dan fitur interaktif.",
-    image: "public/images/project1.webp",
+    image: project1,
     tech: [
       { name: "Vue JS", class: "bg-green-300" },
       { name: "Tailwind", class: "bg-yellow-300" },
@@ -13,7 +16,7 @@ const projects = [
   {
     title: "Perpustakaan Digital",
     desc: "Website perpustakaan digital dengan fitur pencarian buku, dan baca buku digital.",
-    image: "public/images/project2.webp",
+    image: project2,
     tech: [
       { name: "Laravel", class: "bg-blue-300" },
       { name: "MySQL", class: "bg-pink-300" },
@@ -22,7 +25,7 @@ const projects = [
   {
     title: "Manajemen Toko",
     desc: "Website manajemen toko online dengan fitur CRUD, authentication, dan dashboard admin.",
-    image: "public/images/project3.webp",
+    image: project3,
     tech: [
       { name: "Laravel", class: "bg-blue-300" },
       { name: "MySQL", class: "bg-pink-300" },
