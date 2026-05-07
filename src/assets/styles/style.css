@@ -2,11 +2,12 @@
 
 html{
   scroll-behavior: smooth;
-  
+  overflow-x: hidden;
 }
 
 body{
   font-family: 'Space Grotesk', sans-serif;
+   overflow-x: hidden;
 }
 
 .grid-bg{
