@@ -1,8 +1,14 @@
 <template>
   <section
     id="journey"
-    class="min-h-screen flex items-center justify-center px-6 md:px-16 py-[120px]"
+    class="relative min-h-screen flex items-center justify-center px-6 md:px-16 py-[120px]"
   >
+  <img
+      src="/public/images/pattern2.webp"
+      alt=""
+      class="w-20 md:w-28 absolute right-2 md:right-10 top-5 md:top-10 spin opacity-80"
+      />
+  
     <div
       class="w-full max-w-4xl bg-gray-50 border-4 border-gray-800 rounded-3xl p-8 md:p-10 shadow-[10px_10px_0px_black]"
     >
@@ -41,7 +47,7 @@
           <span class="absolute -left-[14px] top-2 w-6 h-6 bg-green-300 border-4 border-gray-800 rounded-full shadow-[4px_4px_0px_black]"></span>
           <div class="bg-green-200 border-4 border-gray-800 p-5 rounded-2xl shadow-[6px_6px_0px_black]">
             <h3 class="text-xl font-black">Belajar Framework</h3>
-            <p class="text-sm font-bold text-gray-700">2024-2026</p>
+            <p class="text-sm font-bold text-gray-700">2024 - 2026</p>
             <p class="mt-2 font-bold text-gray-800">
               Mendalami Vue.js dan Laravel untuk membangun aplikasi web modern.
             </p>
@@ -53,7 +59,7 @@
           <span class="absolute -left-[14px] top-2 w-6 h-6 bg-blue-300 border-4 border-gray-800 rounded-full shadow-[4px_4px_0px_black]"></span>
           <div class="bg-blue-200 border-4 border-gray-800 p-5 rounded-2xl shadow-[6px_6px_0px_black]">
             <h3 class="text-xl font-black">Magang (PKL)</h3>
-            <p class="text-sm font-bold text-gray-700">2024</p>
+            <p class="text-sm font-bold text-gray-700">2025 - 2026</p>
             <p class="mt-2 font-bold text-gray-800">
                 Melakukan magang di perusahaan teknologi untuk mendapatkan pengalaman kerja nyata
             </p>
@@ -71,12 +77,12 @@
             </p>
           </div>
         </div>
-
-      </div>
     </div>
-  </section>
+</div>
+<img
+  src="/public/images/pattern1.webp"
+  alt=""
+  class="w-20 md:w-28 absolute left-2 md:left-10 bottom-5 md:bottom-10 spin opacity-80"
+/>
+</section>
 </template>
-
-<script setup>
-// static component
-</script>

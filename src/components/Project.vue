@@ -1,6 +1,44 @@
+
+<script setup>
+const projects = [
+  {
+    title: "Zona Coding",
+    desc: "Website pembelajaran modern dengan tampilan yang menarik dan fitur interaktif.",
+    image: "public/images/project1.webp",
+    tech: [
+      { name: "Vue JS", class: "bg-green-300" },
+      { name: "Tailwind", class: "bg-yellow-300" },
+    ],
+  },
+  {
+    title: "Perpustakaan Digital",
+    desc: "Website perpustakaan digital dengan fitur pencarian buku, dan baca buku digital.",
+    image: "public/images/project2.webp",
+    tech: [
+      { name: "Laravel", class: "bg-blue-300" },
+      { name: "MySQL", class: "bg-pink-300" },
+    ],
+  },
+  {
+    title: "Manajemen Toko",
+    desc: "Website manajemen toko online dengan fitur CRUD, authentication, dan dashboard admin.",
+    image: "public/images/project3.webp",
+    tech: [
+      { name: "Laravel", class: "bg-blue-300" },
+      { name: "MySQL", class: "bg-pink-300" },
+    ],
+  },
+];
+</script>
 <template>
-  <section id="projects" class="min-h-screen px-6 md:px-16 py-[130px]">
+  <section id="projects" class="relative min-h-screen px-6 md:px-16 py-[130px]">
     <!-- TITLE -->
+    <img
+      src="/public/images/pattern3.webp"
+      alt=""
+      class="absolute top-30 right-5 md:right-16 w-28 md:w-40 float opacity-60 pointer-events-none"
+    />
+
     <div class="max-w-7xl mx-auto mb-14">
       <p
         class="inline-block bg-orange-500 text-white px-4 py-2 font-black rounded-2xl mb-5"
@@ -20,13 +58,14 @@
 
     <!-- PROJECT LIST -->
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-      <!-- PROJECT CARD -->
       <div
+        v-for="(project, index) in projects"
+        :key="index"
         class="bg-gray-50 border-4 border-gray-800 rounded-3xl overflow-hidden shadow-[10px_10px_0px_black] hover:-translate-y-2 transition duration-300"
       >
         <!-- IMAGE -->
         <img
-          src="/public/images/project1.webp"
+          :src="project.image"
           alt="project"
           class="w-full h-[220px] object-cover border-b-4 border-gray-800"
         />
@@ -35,141 +74,20 @@
         <div class="p-6">
           <div class="flex flex-wrap gap-3 mb-5">
             <span
-              class="bg-green-300 border-2 border-gray-800 px-3 py-1 font-black text-sm"
+              v-for="(tech, i) in project.tech"
+              :key="i"
+              :class="tech.class"
+              class="border-2 border-gray-800 px-3 py-1 font-black text-sm"
             >
-              Vue JS
-            </span>
-
-            <span
-              class="bg-yellow-300 border-2 border-gray-800 px-3 py-1 font-black text-sm"
-            >
-              Tailwind
+              {{ tech.name }}
             </span>
           </div>
 
-          <h2 class="text-2xl font-black mb-3">Portfolio Website</h2>
+          <h2 class="text-2xl font-black mb-3">{{ project.title }}</h2>
 
           <p class="font-bold text-gray-700 mb-6">
-            Website portfolio modern dengan style Neo Brutalism dan responsive
-            design.
+            {{ project.desc }}
           </p>
-
-          <!-- BUTTON -->
-          <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-orange-500 text-white border-4 border-gray-800 px-5 py-2 font-black shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
-            >
-              Demo
-            </a>
-
-            <a
-              href="#"
-              class="bg-white border-4 border-gray-800 px-5 py-2 font-black shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
-            >
-              Github
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT CARD -->
-      <div
-        class="bg-gray-50 border-4 border-gray-800 rounded-3xl overflow-hidden shadow-[10px_10px_0px_black] hover:-translate-y-2 transition duration-300"
-      >
-        <img
-          src="/public/images/project2.webp"
-          alt="project"
-          class="w-full h-[220px] object-cover border-b-4 border-gray-800"
-        />
-
-        <div class="p-6">
-          <div class="flex flex-wrap gap-3 mb-5">
-            <span
-              class="bg-blue-300 border-2 border-gray-800 px-3 py-1 font-black text-sm"
-            >
-              Laravel
-            </span>
-
-            <span
-              class="bg-pink-300 border-2 border-gray-800 px-3 py-1 font-black text-sm"
-            >
-              MySQL
-            </span>
-          </div>
-
-          <h2 class="text-2xl font-black mb-3">Book Store App</h2>
-
-          <p class="font-bold text-gray-700 mb-6">
-            Aplikasi toko buku online dengan fitur CRUD, authentication, dan
-            dashboard admin.
-          </p>
-
-          <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-orange-500 text-white border-4 border-gray-800 px-5 py-2 font-black shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
-            >
-              Demo
-            </a>
-
-            <a
-              href="#"
-              class="bg-white border-4 border-gray-800 px-5 py-2 font-black shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
-            >
-              Github
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT CARD -->
-      <div
-        class="bg-gray-50 border-4 border-gray-800 rounded-3xl overflow-hidden shadow-[10px_10px_0px_black] hover:-translate-y-2 transition duration-300"
-      >
-        <img
-          src="/public/images/project3.webp"
-          alt="project"
-          class="w-full h-[220px] object-cover border-b-4 border-gray-800"
-        />
-
-        <div class="p-6">
-          <div class="flex flex-wrap gap-3 mb-5">
-            <span
-              class="bg-orange-300 border-2 border-gray-800 px-3 py-1 font-black text-sm"
-            >
-              Vue JS
-            </span>
-
-            <span
-              class="bg-green-300 border-2 border-gray-800 px-3 py-1 font-black text-sm"
-            >
-              Firebase
-            </span>
-          </div>
-
-          <h2 class="text-2xl font-black mb-3">Task Management</h2>
-
-          <p class="font-bold text-gray-700 mb-6">
-            Website task management modern dengan realtime database dan
-            responsive UI.
-          </p>
-
-          <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-orange-500 text-white border-4 border-gray-800 px-5 py-2 font-black shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
-            >
-              Demo
-            </a>
-
-            <a
-              href="#"
-              class="bg-white border-4 border-gray-800 px-5 py-2 font-black shadow-[4px_4px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
-            >
-              Github
-            </a>
-          </div>
         </div>
       </div>
     </div>
