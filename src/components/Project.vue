@@ -108,7 +108,7 @@ onMounted(() => {
         Tailwind CSS dengan desain modern dan responsive.
       </p>
       <!-- TAB BUTTON -->
-      <div class="flex flex-wrap gap-4 mt-8">
+      <div class="flex flex-wrap gap-1 mt-8">
         <button
           @click="activeTab = 'projects'"
           :class="
