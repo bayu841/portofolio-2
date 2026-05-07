@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.vue'
 import HeroSection from './components/HeroSection.vue'
 import About from './components/About.vue'
 import Projects from './components/Project.vue'
+import Journey from './components/Journey.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import ClickSpark from './components/ClickSpark.vue'
@@ -23,6 +24,7 @@ import ClickSpark from './components/ClickSpark.vue'
   <HeroSection />
   <About />
   <Projects />
+  <Journey />
   <Contact />
   <Footer />
   </div>

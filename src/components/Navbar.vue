@@ -54,6 +54,17 @@ const isOpen = ref(false)
           </a>
 
           <a
+            href="#journey"
+            class="relative group hover:text-orange-500 transition"
+          >
+            Journey
+
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[3px] bg-orange-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+
+          <a
             href="#contact"
             class="relative group hover:text-orange-500 transition"
           >
@@ -116,6 +127,14 @@ const isOpen = ref(false)
           class="hover:text-orange-500 transition"
         >
           Projects
+        </a>
+
+        <a
+          href="#journey"
+          @click="isOpen = false"
+          class="hover:text-orange-500 transition"
+        >
+          Journey
         </a>
 
         <a
