@@ -21,6 +21,14 @@ onMounted(() => {
     observer.observe(section);
   }
 });
+
+const downloadCV = () => {
+  const link = document.createElement("a");
+  link.href = `${import.meta.env.BASE_URL}cv/cv-bayu.pdf`;
+  link.download = "CV-Bayu.pdf";
+  link.click();
+};
+
 </script>
 <template>
   <section
@@ -61,12 +69,12 @@ onMounted(() => {
           </a>
 
           <!-- BUTTON CONTACT -->
-          <a
-            href="#contact"
+          <button
+            @click="downloadCV"
             class="bg-orange-500 text-white border-4 border-gray-900 px-5 md:px-6 py-3 font-black text-sm md:text-base shadow-[5px_5px_0px_gray] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition duration-200"
           >
-            Contact Me
-          </a>
+            Download CV
+          </button>
         </div>
       </div>
 
