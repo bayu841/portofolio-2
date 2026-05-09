@@ -165,7 +165,7 @@ onMounted(() => {
               <img
                 :src="project.image"
                 alt="project"
-                class="w-full h-[220px] object-cover border-b-4 border-gray-800"
+                class="w-full h-[160px] md:h-[185px] object-cover border-b-4 border-gray-800"
               />
 
               <!-- CONTENT -->
