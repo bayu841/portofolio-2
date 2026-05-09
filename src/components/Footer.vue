@@ -29,6 +29,10 @@ import { Github, Instagram, Linkedin } from "lucide-vue-next";
             Projects
           </a>
 
+          <a href="#journey" class="hover:text-orange-500 transition">
+            Journey
+          </a>
+
           <a href="#contact" class="hover:text-orange-500 transition">
             Contact
           </a>
